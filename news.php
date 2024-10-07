@@ -36,7 +36,7 @@
             <main>             
             <?php
                 // Etape 1: Ouvrir une connexion avec la base de donnée.
-                $mysqli = new mysqli("localhost", "Babou", "900613", "socialnetwork");
+                $mysqli = new mysqli("localhost", "admin", "admin", "socialnetwork");
                 //verification
                 if ($mysqli->connect_error)
                 {

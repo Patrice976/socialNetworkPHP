@@ -51,7 +51,7 @@
                 /**
                  * Etape 2: se connecter à la base de donnée
                  */
-                $mysqli = new mysqli("localhost", "Babou", "900613", "socialnetwork");
+                $mysqli = new mysqli("localhost", "admin", "admin", "socialnetwork");
 
                 /**
                  * Etape 3: récupérer le nom de l'utilisateur
