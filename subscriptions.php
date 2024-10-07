@@ -59,7 +59,7 @@
                 ?>
                 <article>
                     <img src="user.jpg" alt="blason"/>
-                    <h3><?php echo $subscriptions['alias'] ?></h3>
+                    <h3></h3>
                     <p><?php echo $subscriptions['id'] ?></p>                    
                 </article>
                 <?php } ?>
