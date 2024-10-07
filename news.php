@@ -93,9 +93,7 @@
                             <a href=""><?php echo "#".$post['taglist']?></a>,
                         </footer>
                     </article>
-                    <?php
-                }
-                ?>
+                    <?php } ?>
 
             </main>
         </div>
