@@ -61,13 +61,13 @@
                  */
                 while ($tag = $lesInformations->fetch_assoc())
                 {
-                    echo "<pre>" . print_r($tag, 1) . "</pre>";
+                    // echo "<pre>" . print_r($tag, 1) . "</pre>";
                     ?>
                     <article>
-                        <h3>#chaussette</h3>
-                        <p>id:321</p>
+                        <h3><?php echo $tag['id'] ?></h3>
+                        <p><?php echo $tag['label'] ?></p>
                         <nav>
-                            <a href="tags.php?tag_id=321">Messages</a>
+                            <a href=<?php echo "tags.php?tag_id=".$tag['id']?>>Messages</a>
                         </nav>
                     </article>
                 <?php } ?>
@@ -94,11 +94,13 @@
                  */
                 while ($tag = $lesInformations->fetch_assoc())
                 {
-                    echo "<pre>" . print_r($tag, 1) . "</pre>";
+                    //  echo "<pre>" . print_r($tag, 1) . "</pre>";
                     ?>
                     <article>
-                        <h3>Alexandra</h3>
-                        <p>id:123</p>
+                        <h3><?php echo $tag['alias'] ?></h3>
+                        <p><?php echo $tag['id'] ?></p><br>
+                        <p><?php echo $tag['email'] ?></p><br>
+                        <p><?php echo $tag['password'] ?></p>
                         <nav>
                             <a href="wall.php?user_id=123">Mur</a>
                             | <a href="feed.php?user_id=123">Flux</a>
