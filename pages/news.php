@@ -15,19 +15,20 @@ include '../config/bdd.php';
     <!-- L'article qui suit est un exemple pour la présentation et 
                   @todo: doit etre retiré -->
 
+    
     <?php
-
-    $userId = intval($_GET['user_id']);
-    $listAuteurs = [];
-    $laQuestionEnSql = "SELECT * FROM users";
-    $lesInformations = $mysqli->query($laQuestionEnSql);
-    while ($user = $lesInformations->fetch_assoc()) {
-      $listAuteurs[$user['alias']] = [
-        'id' => $user['id'],
-        'url' => 'wall.php?user_id=' . $user['id']
-      ];
-    }
-
+      $userId = intval($_GET['user_id']);
+      $listAuteurs = [];
+      $laQuestionEnSql = "SELECT * FROM users";
+      $lesInformations = $mysqli->query($laQuestionEnSql);
+      while ($user = $lesInformations->fetch_assoc()) {
+        $listAuteurs[$user['alias']] = [
+          'id' => $user['id'],
+          'url' => 'wall.php?user_id=' . $user['id']
+        ];
+      }
+    
+    /* $userId = intval($_GET['user_id']); */
 
     /*
                   // C'est ici que le travail PHP commence
