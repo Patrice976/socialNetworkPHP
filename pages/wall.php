@@ -12,6 +12,14 @@
              * ... mais en résumé c'est une manière de passer des informations à la page en ajoutant des choses dans l'url
              */
             $userId =intval($_GET['user_id']);
+            $listAuteurs = [];
+                    $laQuestionEnSql = "SELECT * FROM users";
+                    $lesInformations = $mysqli->query($laQuestionEnSql);
+                    while ($user = $lesInformations->fetch_assoc())
+                    {
+                        $listAuteurs[$user['id']] = $user['alias'];
+                    }
+
             ?>
           
 
@@ -29,7 +37,7 @@
                 <img src="../img/user.jpg" alt="Portrait de l'utilisatrice"/>
                 <section>
                     <h3>Présentation</h3>
-                    <p>Sur cette page vous trouverez tous les message de l'utilisatrice : XXX
+                    <p>Sur cette page vous trouverez tous les message de l'utilisatrice :<?php echo " ".$user['alias'] ?>
                         (n° <?php echo $userId ?>)
                     </p>
                 </section>
