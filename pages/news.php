@@ -16,6 +16,19 @@ include '../config/bdd.php';
                   @todo: doit etre retiré -->
 
     <?php
+
+    $userId = intval($_GET['user_id']);
+    $listAuteurs = [];
+    $laQuestionEnSql = "SELECT * FROM users";
+    $lesInformations = $mysqli->query($laQuestionEnSql);
+    while ($user = $lesInformations->fetch_assoc()) {
+      $listAuteurs[$user['alias']] = [
+        'id' => $user['id'],
+        'url' => 'wall.php?user_id=' . $user['id']
+      ];
+    }
+
+
     /*
                   // C'est ici que le travail PHP commence
                   // Votre mission si vous l'acceptez est de chercher dans la base
@@ -57,7 +70,7 @@ include '../config/bdd.php';
     if (! $lesInformations) {
       echo "<article>";
       echo ("Échec de la requete : " . $mysqli->error);
-      
+
       exit();
     }
 
@@ -78,7 +91,9 @@ include '../config/bdd.php';
         <h3>
           <time><?php echo $post['created'] ?></time>
         </h3>
-        <address><?php echo "par " . $post['author_name'] ?></address>
+        <address>
+          <?php echo "par <a href='" . $listAuteurs[$post['author_name']]['url'] . "'>" . htmlspecialchars($post['author_name']) . "</a>"; ?>
+        </address>
         <div>
           <p><?php echo $post['content'] ?></p>
         </div>
