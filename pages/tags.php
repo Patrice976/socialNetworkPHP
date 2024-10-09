@@ -45,7 +45,8 @@
                     SELECT posts.content,
                     posts.created,
                     users.alias as author_name,  
-                    count(likes.id) as like_number,  
+                    count(likes.id) as like_number,
+                    COUNT(DISTINCT tags.id) as tag_count ,  
                     GROUP_CONCAT(DISTINCT tags.label) AS taglist 
                     FROM posts_tags as filter 
                     JOIN posts ON posts.id=filter.post_id
@@ -81,7 +82,12 @@
                         </div>
                         <footer>
                             <small>♥<?php echo $post['like_number'] ?></small>
-                            <a href=""><?php echo $post['taglist'] ?></a>,
+                            <?php $tags = explode(',', $post['taglist']); //Transformer la liste de tag en array
+                            // Parcourir chaque tag et l'afficher
+                            foreach ($tags as $tag) {
+                            echo '<a href="">'.$tag . ", ".'</a>'; // Affiche chaque tag avec une virgule et un espace 
+                             } ?>
+                            
                             
                         </footer>
                     </article>
@@ -92,3 +98,4 @@
         </div>
     </body>
 </html>
+
