@@ -1,6 +1,7 @@
 <?php
           include '../config/head_header.php';
           include '../config/bdd.php';
+          include '../config/listAuthors.php';
         ?>
   <div id="wrapper">
     <aside>

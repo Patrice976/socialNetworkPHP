@@ -1,6 +1,7 @@
 <?php
           include '../config/head_header.php';
           include '../config/bdd.php';
+          include '../config/listAuthors.php';
         ?>
         <div id="wrapper">          
             <aside>
@@ -34,7 +35,7 @@
                   ?>
                     <article>
                       <img src="../img/user.jpg" alt="blason" />
-                      <h3><?php echo $followers['alias'] ?></h3>
+                      <h3>  <?php echo "par <a href='" . 'wall.php?user_id=' . $followers['id'] . "'>" . htmlspecialchars($followers['alias']) . "</a>"; ?></h3>
                       <p><?php echo $followers['id'] ?></p>
                     </article>
                   <?php } ?>
