@@ -39,7 +39,9 @@
       ?>
         <article>
           <img src="../img/user.jpg" alt="blason" />
-          <h3><?php echo $subscriptions['alias'] ?></h3>
+          <h3>
+          <?php echo "par <a href='" . 'wall.php?user_id=' . $subscriptions['id'] . "'>" . htmlspecialchars($subscriptions['alias']) . "</a>"; ?>
+          </h3>
           <p><?php echo $subscriptions['id'] ?></p>
         </article>
       <?php } ?>
