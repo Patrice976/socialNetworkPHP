@@ -1,6 +1,7 @@
 <?php
           include '../config/head_header.php';
           include '../config/bdd.php';
+          include '../config/listTags.php';
         ?>
         <div id="wrapper">
             <?php
@@ -11,6 +12,7 @@
             /**
              * Etape 1: Le mur concerne un mot-clé en particulier
              */
+            
             $tagId = intval($_GET['tag_id']);
             ?>
             
@@ -29,11 +31,11 @@
                 <img src="../img/user.jpg"alt="Portrait de l'utilisatrice"/>
                 <section>
                     <h3>Présentation</h3>
-                    <p>Sur cette page vous trouverez les derniers messages comportant
-                        le mot-clé <?php echo $tag['label'] ?>
+                        <p>Sur cette page vous trouverez les derniers messages comportant
+                            le mot-clé <?php echo $tag['label'] ?> 
                         (n° <?php echo $tagId ?>)
                     </p>
-
+                    
                 </section>
             </aside>
             <main>
@@ -82,14 +84,8 @@
                         </div>
                         <footer>
                             <small>♥<?php echo $post['like_number'] ?></small>
-                            <?php $tags = explode(',', $post['taglist']); //Transformer la liste de tag en array
-                            // Parcourir chaque tag et l'afficher
-                            foreach ($tags as $tag) {
-                            echo '<a href="">'.$tag . ", ".'</a>'; // Affiche chaque tag avec une virgule et un espace 
-                             } ?>
-                            
-                            
-                        </footer>
+                            <?php echo include '../config/displayTags.php' ?> 
+                            </footer>
                     </article>
                 <?php } ?>
 
