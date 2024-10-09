@@ -1,6 +1,7 @@
 <?php
           include '../config/head_header.php';
           include '../config/bdd.php';
+          include '../config/listAuthors.php';
 ?>
   <div id="wrapper">
     <?php
@@ -73,7 +74,7 @@
           <h3>
             <time><?php echo $post['created'] ?></time>
           </h3>
-          <address><?php echo "par ".$post['author_name'] ?></address>
+          <?php include '../config/displayAuthor.php' ?>
           <div>
             <p><?php echo $post['content'] ?></p>
           </div>
