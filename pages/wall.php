@@ -1,6 +1,7 @@
 <?php
 include '../config/head_header.php';
 include '../config/bdd.php';
+include '../config/listTags.php';
 ?>
 <div id="wrapper">
   <?php
@@ -22,7 +23,10 @@ include '../config/bdd.php';
     ];
   }
 
-
+  echo '<pre>';
+  print_r($listTags);
+  echo '</pre>'; //
+  print_r(array_keys($listTags));
   ?>
 
 
@@ -88,7 +92,7 @@ include '../config/bdd.php';
         </div>
         <footer>
           <small>♥<?php echo $post['like_number'] ?></small>
-          <a href=""><?php echo $post['taglist'] ?></a>,
+          <?php echo include '../config/displayTags.php' ?>
 
         </footer>
       </article>
