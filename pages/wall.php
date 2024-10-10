@@ -23,10 +23,6 @@ include '../config/listTags.php';
     ];
   }
 
-  echo '<pre>';
-  print_r($listTags);
-  echo '</pre>'; //
-  print_r(array_keys($listTags));
   ?>
 
 

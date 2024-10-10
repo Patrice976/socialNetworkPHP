@@ -1,8 +1,10 @@
     <adress>
-    <?php echo "<a href='" . $listTags[$tag['id']]['url'] . "'>" . htmlspecialchars($listTags['id']) . "</a>"; ?>
-    </address>  
+    <?php 
+$tags = explode(',', $post['taglist']); 
 
-
-    for each (key in tags)
-    
-    print_r(array_keys($listTags));
+foreach ($tags as $hashtag) {
+    var_dump($listTags[$tag['label']]['id']);
+    echo "<a href='tags.php?tag_id=" . $listTags[$tag['label']]['id'] . "'>" . $hashtag . "</a><br>";
+                                             } 
+?> 
+    </address>

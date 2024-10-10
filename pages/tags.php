@@ -73,8 +73,8 @@
                         <p><?php echo $post['content'] ?></p>
                         </div>
                         <footer>
-                            <small>♥<?php echo $post['like_number'] ?></small>
-                            <?php echo include '../config/displayTags.php' ?> 
+                            <small>♥<?php echo $post['like_number'];  ?></small>
+                            <adress><?php include '../config/displayTags.php' ?> </adress>
                             </footer>
                     </article>
                 <?php } ?>
