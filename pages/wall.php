@@ -88,7 +88,7 @@ include '../config/listTags.php';
         </div>
         <footer>
           <small>♥<?php echo $post['like_number'] ?></small>
-          <?php echo include '../config/displayTags.php' ?>
+          <?php include '../config/displayTags.php' ?>
 
         </footer>
       </article>

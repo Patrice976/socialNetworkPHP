@@ -2,6 +2,7 @@
 include '../config/head_header.php';
 include '../config/bdd.php';
 include '../config/listAuthors.php';
+include '../config/listTags.php';
 ?>
 <div id="wrapper">
   <aside>
@@ -75,7 +76,7 @@ include '../config/listAuthors.php';
         </div>
         <footer>
           <small>♥ <?php echo $post['like_number'] ?></small>
-          <a href=""><?php echo $post['taglist'] ?></a>,
+          <a href=""><?php include '../config/displayTags.php' ?></a>
         </footer>
       </article>
     <?php
