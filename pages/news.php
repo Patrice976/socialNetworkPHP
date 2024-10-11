@@ -4,14 +4,15 @@ include '../config/head_header.php';
 include '../config/bdd.php';
 include '../config/listAuthors.php';
 include '../config/listTags.php';
+include '../config/recog_session.php';
 ?>
 <div id="wrapper">
   <aside>
     <img src="../img/user.jpg" alt="Portrait de l'utilisatrice" />
     <section>
-      <h3>Présentation</h3>
-      <p>Sur cette page vous trouverez les derniers messages de
-        tous les utilisatrices du site.</p>
+      <h3>Salut <?php echo " " . $user['alias'] ?></h3>
+      <p>Reste au courant de tout ce qu'il se passe de le monde. En gardant un oeuil sur tout les utilisateurs
+        <?php var_dump($user) ?> </p>
     </section>
   </aside>
   <main>
