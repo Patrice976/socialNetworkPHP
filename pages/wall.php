@@ -3,28 +3,9 @@ session_start();
 include '../config/head_header.php';
 include '../config/bdd.php';
 include '../config/listTags.php';
+include '../config/recog_session.php'
 ?>
 <div id="wrapper">
-  <?php
-  /**
-   * Etape 1: Le mur concerne un utilisateur en particulier
-   * La première étape est donc de trouver quel est l'id de l'utilisateur
-   * Celui ci est indiqué en parametre GET de la page sous la forme user_id=...
-   * Documentation : https://www.php.net/manual/fr/reserved.variables.get.php
-   * ... mais en résumé c'est une manière de passer des informations à la page en ajoutant des choses dans l'url
-   */
-  $userId = $_SESSION['connected_id'];
-  $listAuteurs = [];
-  $laQuestionEnSql = "SELECT * FROM users";
-  $lesInformations = $mysqli->query($laQuestionEnSql);
-  while ($user = $lesInformations->fetch_assoc()) {
-    $listAuteurs[$user['alias']] = [
-      'id' => $user['id'],
-      'url' => 'wall.php?user_id=' . $user['id']
-    ];
-  }
-
-  ?>
 
 
   <aside>
