@@ -1,29 +1,11 @@
 <?php
+session_start();
 include '../config/head_header.php';
 include '../config/bdd.php';
 include '../config/listTags.php';
+include '../config/recog_session.php'
 ?>
 <div id="wrapper">
-  <?php
-  /**
-   * Etape 1: Le mur concerne un utilisateur en particulier
-   * La première étape est donc de trouver quel est l'id de l'utilisateur
-   * Celui ci est indiqué en parametre GET de la page sous la forme user_id=...
-   * Documentation : https://www.php.net/manual/fr/reserved.variables.get.php
-   * ... mais en résumé c'est une manière de passer des informations à la page en ajoutant des choses dans l'url
-   */
-  $userId = intval($_GET['user_id']);
-  $listAuteurs = [];
-  $laQuestionEnSql = "SELECT * FROM users";
-  $lesInformations = $mysqli->query($laQuestionEnSql);
-  while ($user = $lesInformations->fetch_assoc()) {
-    $listAuteurs[$user['alias']] = [
-      'id' => $user['id'],
-      'url' => 'wall.php?user_id=' . $user['id']
-    ];
-  }
-
-  ?>
 
 
   <aside>
@@ -39,10 +21,8 @@ include '../config/listTags.php';
     ?>
     <img src="../img/user.jpg" alt="Portrait de l'utilisatrice" />
     <section>
-      <h3>Présentation</h3>
-      <p>Sur cette page vous trouverez tous les message de l'utilisatrice :<?php echo " " . $user['alias'] ?>
-        (n° <?php echo $userId ?>)
-      </p>
+      <h3>Bonjour <?php echo " " . $user['alias'] ?> </h3>
+      <p>Bienvenu sur ta pages numéro <?php echo $userId ?> , tu y retrouveras tout tes postes </p>
     </section>
   </aside>
   <main>
@@ -87,7 +67,8 @@ include '../config/listTags.php';
           <p><?php echo $post['content'] ?></p>
         </div>
         <footer>
-          <small>♥<?php echo $post['like_number'] ?></small>
+          <small>♥<?php echo $post['like_number'];
+          var_dump($_SESSION['connected_id']) ?></small>
           <?php include '../config/displayTags.php' ?>
 
         </footer>
