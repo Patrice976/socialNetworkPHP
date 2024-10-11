@@ -1,4 +1,5 @@
 <?php
+session_start();
 include '../config/head_header.php';
 include '../config/bdd.php';
 include '../config/listTags.php';
@@ -87,7 +88,8 @@ include '../config/listTags.php';
           <p><?php echo $post['content'] ?></p>
         </div>
         <footer>
-          <small>♥<?php echo $post['like_number'] ?></small>
+          <small>♥<?php echo $post['like_number'];
+          var_dump($_SESSION['connected_id']) ?></small>
           <?php include '../config/displayTags.php' ?>
 
         </footer>

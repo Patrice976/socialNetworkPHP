@@ -1,4 +1,5 @@
 <?php
+        session_start();
           include '../config/head_header.php';
           include '../config/bdd.php';
           include '../config/listTags.php';
