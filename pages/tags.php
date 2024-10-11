@@ -3,6 +3,7 @@
           include '../config/head_header.php';
           include '../config/bdd.php';
           include '../config/listTags.php';
+          include '../config/recog_session.php';
         ?>
         <div id="wrapper">
             <?php
@@ -23,7 +24,8 @@
                 <section>
                     <h3>Présentation</h3>
                         <p>Sur cette page vous trouverez les derniers messages comportant
-                            le mot-clé <?php echo $tag['label'] ?> 
+                            le mot-clé <?php echo $tag['label'];
+                            var_dump ($userId); ?> 
                         (n° <?php echo $tagId ?>)
                     </p>
                     

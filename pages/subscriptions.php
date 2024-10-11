@@ -3,24 +3,21 @@
           include '../config/head_header.php';
           include '../config/bdd.php';
           include '../config/listAuthors.php';
+          include '../config/recog_session.php';
+
         ?>
   <div id="wrapper">
     <aside>
       <img src="../img/user.jpg" alt="Portrait de l'utilisatrice" />
       <section>
         <h3>Présentation</h3>
-        <p>Sur cette page vous trouverez la liste des personnes dont
-          l'utilisatrice 
-          n° <?php echo intval($_GET['user_id']) ?>
-          suit les messages
-        </p>
+        <p>Sur cette page vous trouverez la liste des personnes que <?php echo $user['alias'] ?> suit  </p>
 
       </section>
     </aside>
     <main class='contacts'>
       <?php
-      // Etape 1: récupérer l'id de l'utilisateur
-      $userId = intval($_GET['user_id']);
+
       
       // Etape 3: récupérer le nom de l'utilisateur
       $laQuestionEnSql = "

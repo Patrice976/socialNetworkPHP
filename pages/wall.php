@@ -3,22 +3,13 @@ session_start();
 include '../config/head_header.php';
 include '../config/bdd.php';
 include '../config/listTags.php';
-include '../config/recog_session.php'
+include '../config/recog_session.php';
 ?>
 <div id="wrapper">
 
 
   <aside>
-    <?php
-    /**
-     * Etape 3: récupérer le nom de l'utilisateur
-     */
-    $laQuestionEnSql = "SELECT * FROM users WHERE id= '$userId' ";
-    $lesInformations = $mysqli->query($laQuestionEnSql);
-    $user = $lesInformations->fetch_assoc();
-    //@todo: afficher le résultat de la ligne ci dessous, remplacer XXX par l'alias et effacer la ligne ci-dessous
-    // echo "<pre>" . print_r($user, 1) . "</pre>";
-    ?>
+    
     <img src="../img/user.jpg" alt="Portrait de l'utilisatrice" />
     <section>
       <h3>Bonjour <?php echo " " . $user['alias'] ?> </h3>

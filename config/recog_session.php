@@ -9,3 +9,7 @@ $userId = $_SESSION['connected_id'];
       'url' => 'wall.php?user_id=' . $user['id']
     ];
   }
+
+  $laQuestionEnSql = "SELECT * FROM users WHERE id= '$userId' ";
+    $lesInformations = $mysqli->query($laQuestionEnSql);
+    $user = $lesInformations->fetch_assoc();
