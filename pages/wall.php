@@ -1,5 +1,4 @@
 <?php
-session_start();
 include '../config/bdd.php';
 include '../config/recog_session.php';
 include '../config/chooseHeader.php';

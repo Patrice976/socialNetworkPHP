@@ -13,7 +13,7 @@
                 <section>
                     <h3>Présentation</h3>
                     <p>Sur cette page vous trouverez la liste des personnes qui
-                        suivent les messages de <?php echo $user['alias'] ?> <p>
+                        suivent les messages de <?php echo $USER['alias'] ?> <p>
 
                 </section>
             </aside>
