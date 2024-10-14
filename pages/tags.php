@@ -76,8 +76,14 @@
                         <p><?php echo $post['content'] ?></p>
                         </div>
                         <footer>
-                            <small>♥<?php echo $post['like_number'];  ?></small>
-                            <adress><?php include '../config/displayTags.php' ?> </adress>
+                            <small>♥<?php echo $post['like_number'] ?></small>
+                            <?php  
+                            $tags = explode(',', $post['taglist']); 
+                            foreach ($tags as $tag) {
+                                echo '<a href="">'.$tag . ", ".'</a>'; 
+                            } 
+                            ?>
+
                             </footer>
                     </article>
                 <?php } ?>
