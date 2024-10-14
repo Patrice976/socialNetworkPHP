@@ -1,15 +1,11 @@
 <?php
-$userId = $_SESSION['connected_id'];
-  $listAuteurs = [];
-  $laQuestionEnSql = "SELECT * FROM users";
-  $lesInformations = $mysqli->query($laQuestionEnSql);
-  while ($user = $lesInformations->fetch_assoc()) {
-    $listAuteurs[$user['alias']] = [
-      'id' => $user['id'],
-      'url' => 'wall.php?user_id=' . $user['id']
-    ];
-  }
-
+session_start();
+"<pre>" . print_r('Into recog_session') . "</pre>";
+"<pre>" . var_dump($_SESSION['connected_id']) . "</pre>";
+global $USER;
+ $userId = $_SESSION['connected_id'];
   $laQuestionEnSql = "SELECT * FROM users WHERE id= '$userId' ";
     $lesInformations = $mysqli->query($laQuestionEnSql);
-    $user = $lesInformations->fetch_assoc();
+    $USER = $lesInformations->fetch_assoc();
+  
+
