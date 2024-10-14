@@ -1,6 +1,8 @@
 <?php
-include '../config/head_header.php';
 include '../config/bdd.php';
+include '../config/recog_session.php';
+include '../config/chooseHeader.php';
+
 ?>
 
 <div id="wrapper">

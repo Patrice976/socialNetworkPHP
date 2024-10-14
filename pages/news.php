@@ -1,18 +1,19 @@
 <?php
-session_start();
-include '../config/head_header.php';
 include '../config/bdd.php';
+include '../config/recog_session.php';
+include '../config/chooseHeader.php';
 include '../config/listAuthors.php';
 include '../config/listTags.php';
-include '../config/recog_session.php';
 ?>
 <div id="wrapper">
   <aside>
     <img src="../img/user.jpg" alt="Portrait de l'utilisatrice" />
     <section>
-      <h3>Salut <?php echo " " . $user['alias'] ?></h3>
+      <h3>Salut <?php echo " " . $USER['alias'] ?></h3>
       <p>Reste au courant de tout ce qu'il se passe de le monde. En gardant un oeuil sur tout les utilisateurs
-        <?php var_dump($user) ?> </p>
+        <?php var_dump($USER);
+        var_dump($userId) ?>
+       </p>
     </section>
   </aside>
   <main>

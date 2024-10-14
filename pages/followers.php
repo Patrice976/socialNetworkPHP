@@ -1,9 +1,10 @@
 <?php
-          session_start();
-          include '../config/head_header.php';
+          // session_start();
           include '../config/bdd.php';
-          include '../config/listAuthors.php';
           include '../config/recog_session.php';
+          include '../config/chooseHeader.php';
+          include '../config/listAuthors.php';
+          
 
         ?>
         <div id="wrapper">          

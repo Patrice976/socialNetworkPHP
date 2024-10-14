@@ -1,9 +1,9 @@
 <?php
-session_start();
-include '../config/head_header.php';
+//session_start();
 include '../config/bdd.php';
-include '../config/listTags.php';
 include '../config/recog_session.php';
+include '../config/chooseHeader.php';
+include '../config/listTags.php';
 ?>
 <div id="wrapper">
 
@@ -12,7 +12,7 @@ include '../config/recog_session.php';
     
     <img src="../img/user.jpg" alt="Portrait de l'utilisatrice" />
     <section>
-      <h3>Bonjour <?php echo " " . $user['alias'] ?> </h3>
+      <h3>Bonjour  <?php var_dump($user);echo " " . $user['alias'] ?> </h3>
       <p>Bienvenu sur ta pages numéro <?php echo $userId ?> , tu y retrouveras tout tes postes </p>
     </section>
   </aside>

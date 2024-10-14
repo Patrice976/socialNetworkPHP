@@ -1,9 +1,8 @@
 <?php
-session_start();
-?>
-<?php
-include '../config/head_header.php';
 include '../config/bdd.php';
+include '../config/recog_session.php';
+include '../config/chooseHeader.php';
+
 ?>
 
 <div id="wrapper">
@@ -52,9 +51,8 @@ include '../config/bdd.php';
           echo "La connexion a échouée. ";
         } else {
           echo "Votre connexion est un succès : " . $user['alias'] . ".";
-          // Etape 7 : Se souvenir que l'utilisateur s'est connecté pour la suite
-          // documentation: https://www.php.net/manual/fr/session.examples.basic.php
           $_SESSION['connected_id'] = $user['id'];
+          $userId = $_SESSION['connected_id'];
         }
       }
       ?>
@@ -72,7 +70,8 @@ include '../config/bdd.php';
         Pas de compte?
         <a href='registration.php'>Inscrivez-vous.</a>
         <?php var_dump($_SESSION['connected_id']);
-        var_dump($user['id'])
+        var_dump($user['id']);
+        var_dump($userId)
         ?>
       </p>
 
