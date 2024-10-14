@@ -69,10 +69,6 @@ include '../config/chooseHeader.php';
       <p>
         Pas de compte?
         <a href='registration.php'>Inscrivez-vous.</a>
-        <?php var_dump($_SESSION['connected_id']);
-        var_dump($user['id']);
-        var_dump($userId)
-        ?>
       </p>
 
     </article>
