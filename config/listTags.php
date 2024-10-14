@@ -7,4 +7,11 @@
       $listTags[$tag['label']] = [
         'id' => $tag['id'],
         'url' => 'tags.php?tag_id=' . $tag['id']
-      ]; }
+      ]; 
+    }
+
+    // @todo : 
+    
+    // $listTags($post["taglist"]["url"]);
+    // $tag = la derniere valeur fetch 
+    // verifier chaque fichier avec modif des tags

@@ -1,20 +1,13 @@
 <?php
+          session_start();
           include '../config/head_header.php';
           include '../config/bdd.php';
           include '../config/listAuthors.php';
+          include '../config/listTags.php';
+          include '../config/recog_session.php';
 ?>
   <div id="wrapper">
-    <?php
-    /**
-     * Cette page est TRES similaire à wall.php. 
-     * Vous avez sensiblement à y faire la meme chose.
-     * Il y a un seul point qui change c'est la requete sql.
-     */
-    /**
-     * Etape 1: Le mur concerne un utilisateur en particulier
-     */
-    $userId = intval($_GET['user_id']);
-    ?>
+   
 
 
     <aside>
@@ -30,9 +23,8 @@
       ?>
       <img src="../img/user.jpg" alt="Portrait de l'utilisatrice" />
       <section>
-        <h3>Présentation</h3>
-        <p>Sur cette page vous trouverez tous les message des utilisatrices
-          auxquel est abonnée l'utilisatrice <?php echo $user['alias'] ?>
+        <h3>Bonjour <?php echo $user['alias'] ?> </h3>
+        <p>Sur cette page tu trouveras tous les postes de utilisateur.ice(s) auquel tu es abonné.e
           (n° <?php echo $userId ?>)
         </p>
 
@@ -80,7 +72,7 @@
           </div>
           <footer>
             <small>♥ <?php echo $post['like_number'] ?></small>
-            <a href=""><?php echo $post['taglist'] ?></a>,
+            <a href=""><?php include '../config/displayTags.php' ?></a>
           </footer>
         </article>
       <?php

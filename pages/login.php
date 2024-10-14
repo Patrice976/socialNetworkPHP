@@ -28,8 +28,8 @@ include '../config/bdd.php';
         // observez le résultat de cette ligne de débug (vous l'effacerez ensuite)
         echo "<pre>" . print_r($_POST, 1) . "</pre>";
         // et complétez le code ci dessous en remplaçant les ???
-        $emailAVerifier = $_POST['???'];
-        $passwdAVerifier = $_POST['???'];
+        $emailAVerifier = $_POST['email'];
+        $passwdAVerifier = $_POST['motpasse'];
 
 
        
@@ -71,6 +71,9 @@ include '../config/bdd.php';
       <p>
         Pas de compte?
         <a href='registration.php'>Inscrivez-vous.</a>
+        <?php var_dump($_SESSION['connected_id']);
+        var_dump($user['id'])
+        ?>
       </p>
 
     </article>

@@ -1,23 +1,15 @@
 <?php
+        session_start();
           include '../config/head_header.php';
           include '../config/bdd.php';
           include '../config/listTags.php';
+          include '../config/recog_session.php';
         ?>
         <div id="wrapper">
             <?php
-            /**
-             * Cette page est similaire à wall.php ou feed.php 
-             * mais elle porte sur les mots-clés (tags)
-             */
-            /**
-             * Etape 1: Le mur concerne un mot-clé en particulier
-             */
-            
             $tagId = intval($_GET['tag_id']);
             ?>
-            
-
-            <aside>
+             <aside>
                 <?php
                 /**
                  * Etape 3: récupérer le nom du mot-clé
@@ -32,7 +24,8 @@
                 <section>
                     <h3>Présentation</h3>
                         <p>Sur cette page vous trouverez les derniers messages comportant
-                            le mot-clé <?php echo $tag['label'] ?> 
+                            le mot-clé <?php echo $tag['label'];
+                            var_dump ($userId); ?> 
                         (n° <?php echo $tagId ?>)
                     </p>
                     
@@ -90,6 +83,7 @@
                                 echo '<a href="">'.$tag . ", ".'</a>'; 
                             } 
                             ?>
+
                             </footer>
                     </article>
                 <?php } ?>

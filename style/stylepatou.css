@@ -1,10 +1,12 @@
 body{
-    background-color: #003;
+    background-image : url(../img/bg.jpg);
     font-family: Arial;
 }
 
 a{text-decoration: none; color:black;}
-a:hover{text-decoration: underline;}
+a:hover{
+    text-decoration: underline;
+}
 
 body>header{
     background-color: #fff;
@@ -21,24 +23,39 @@ body>header #menu {
     display:flex;
     width:50%;
     align-items: stretch;
-    border-left: 1px solid #99b;
+    border-left: 5px double #C7003B;
 }
 body>header #menu a{
     flex:1;
     text-align: center;
     padding-top:2em;
-    border-right: 1px solid #99b;
+    border-right: 5px double #C7003B;
 }
-body>header a:hover
-{
-    background-color: #99b;
+body>header a:hover {
+    animation: color-change 2s linear infinite alternate ;
 }
+
+  @keyframes color-change {
+    0% {
+      background: white;
+    }
+    33.3333% {
+      background: #3CADD6;
+    }
+    66.666% {
+      background: #FECB40;
+    }
+    100% {
+      background: #EA0033;
+    }
+  }
+  
 body>header ul{list-style: none;}
 body>header #user
 {
     margin-left: auto;
     flex:0.2;
-    border-left: 1px solid #99b;
+    border-left: 5px double #C7003B;
 }
 body>header #user>a{
     display:block;
@@ -53,7 +70,7 @@ body>header #user ul{
     margin:0;
     margin-left:-5em;
     background-color: #fff;
-    border: 1px solid #99b;
+    border: 1px solid #C7003B;
 
     z-index: 1;
 }
@@ -61,7 +78,7 @@ body>header #user ul li a{
     display:block;
     width:10em;
     padding:1em;
-    border-bottom: 1px solid #99b;
+    border-bottom: 1px solid #C7003B;
 }
 body>header #user:hover ul{
     display:block;
@@ -77,13 +94,18 @@ body>header #user:hover ul{
     background-color: #fff;
     flex:1;
     padding:1em;
-    border-radius: 1em;    
+    border-radius: 1em;
+    border: 1px solid #7DD9FE;
+    box-shadow: 1px 1px 11px 9px #7DD9FE;
+    ;;     
 }
 #wrapper aside img{
     display: block;
     width:50%;
     margin:auto;
+    
 }
+
 
 #wrapper main{
     flex:3;
@@ -96,6 +118,7 @@ body>header #user:hover ul{
     padding:1em;
     margin-bottom: 1em ;
     border-radius: 1em;
+    border: solid 1px #BDBEC1; 
 }
 #wrapper main article h3{
     margin:0;
@@ -152,5 +175,5 @@ body>header #user:hover ul{
 }
 
 pre{
-    color:#aaa;
+    color:#C7003B;
 }
