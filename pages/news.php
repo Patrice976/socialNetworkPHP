@@ -11,8 +11,6 @@ include '../config/listTags.php';
     <section>
       <h3>Salut <?php echo " " . $USER['alias'] ?></h3>
       <p>Reste au courant de tout ce qu'il se passe de le monde. En gardant un oeuil sur tout les utilisateurs
-        <?php var_dump($USER);
-        var_dump($userId) ?>
        </p>
     </section>
   </aside>
