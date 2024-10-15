@@ -22,4 +22,3 @@ $BDDinjectLike = "INSERT INTO likes (user_id, post_id) VALUES ($userId, $postId)
 $queryinjectLike = $mysqli->query($BDDinjectLike);
 
 header('Location:'. $_SERVER['HTTP_REFERER']);
-
