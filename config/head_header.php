@@ -13,7 +13,7 @@
                 <a href="news.php">Actualités</a>
                 <a href="wall.php">Mur</a>
                 <a href="feed.php">Flux</a>
-                <a href="tags.php?tag_id=">Mots-clés</a>
+                <!-- <a href="tags.php?tag_id=">Mots-clés</a> -->
             </nav>
             <nav id="user">
                 <a href="#">Profil</a>

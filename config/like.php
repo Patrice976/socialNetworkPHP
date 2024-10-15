@@ -1,4 +1,5 @@
 <?php 
+
 $BDDLike = "SELECT * FROM likes WHERE user_id = $userId AND post_ID = $post[id]";
 $queryLike = $mysqli->query($BDDLike);
 $liked = $queryLike->fetch_assoc();
