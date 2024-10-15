@@ -38,6 +38,7 @@ include '../config/listTags.php';
     $laQuestionEnSql = "
                     SELECT posts.content,
                     posts.created,
+                    posts.id,
                     users.alias as author_name,  
                     count(likes.id) as like_number,  
                     GROUP_CONCAT(DISTINCT tags.label) AS taglist 
@@ -76,7 +77,7 @@ include '../config/listTags.php';
           <p><?php echo $post['content'] ?></p>
         </div>
         <footer>
-          <small>♥ <?php echo $post['like_number'] ?></small>
+          <small> <?php include '../config/like.php' ?></small>
           <a href=""><?php include '../config/displayTags.php' ?></a>
         </footer>
       </article>
