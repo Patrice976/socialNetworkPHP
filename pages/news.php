@@ -76,7 +76,7 @@ include '../config/listTags.php';
           <p><?php echo $post['content'] ?></p>
         </div>
         <footer>
-          <small>♥ <?php echo $post['like_number'] ?></small>
+          <small> <?php include '../config/like.php' ?></small>
           <a href=""><?php include '../config/displayTags.php' ?></a>
         </footer>
       </article>
