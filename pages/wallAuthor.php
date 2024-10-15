@@ -8,6 +8,12 @@ include '../config/listTags.php';
 <div id="wrapper">
 
   <?php
+  $authorRequest= "SELECT * FROM users WHERE id=".$_GET['user_id'];
+  $datasAuthor= $mysqli->query($authorRequest);
+  if (! $authorRequest) {
+    echo ("Échec de la requete : " . $mysqli->error);
+  }
+  $author= $datasAuthor->fetch_assoc();
   $laQuestionEnSql = "
   SELECT posts.content, posts.created, users.alias as author_name, 
   COUNT(likes.id) as like_number, GROUP_CONCAT(DISTINCT tags.label) AS taglist 
@@ -16,17 +22,19 @@ include '../config/listTags.php';
   LEFT JOIN posts_tags ON posts.id = posts_tags.post_id  
   LEFT JOIN tags       ON posts_tags.tag_id  = tags.id 
   LEFT JOIN likes      ON likes.post_id  = posts.id 
-  WHERE posts.user_id=" . $_GET['user_id'] . " 
+  WHERE posts.user_id=" .$_GET['user_id']." 
   GROUP BY posts.id
   ORDER BY posts.created DESC  
   ";
+  /* "<pre>" . var_dump($_GET['user_id']). "</pre>"; */
   $lesInformations = $mysqli->query($laQuestionEnSql);
   if (! $lesInformations) {
     echo ("Échec de la requete : " . $mysqli->error);
   }
-  $post = $lesInformations->fetch_assoc();
-  /* "<pre>".var_dump($post) ."</pre>"; */
+//$post = $lesInformations->fetch_assoc();
 
+/*  "<pre>" . var_dump($author) . "</pre>";
+ die; */
   ?>
 
   <aside>
@@ -34,23 +42,18 @@ include '../config/listTags.php';
     <img src="../img/user.jpg" alt="Portrait de l'utilisatrice" />
     <section>
 
-      <p>Bienvenue sur le mur de <?php echo $post['author_name']; ?></p>
+      <p><!-- Bienvenue sur le mur de --> <?php 
+      
+      echo $author['alias']; ?></p>
     </section>
   </aside>
   <main>
     <?php
-    /**
-     * Etape 3: récupérer tous les messages de l'utilisatrice
-     */
-
-
-    /**
-     * Etape 4: @todo Parcourir les messsages et remplir correctement le HTML avec les bonnes valeurs php
-     */
     while ($post = $lesInformations->fetch_assoc()) {
 
-      //echo "<pre>" . print_r($post, 1) . "</pre>";
+  
     ?>
+    
       <article>
         <h3>
           <time><?php echo $post['created'] ?></time>
@@ -62,15 +65,17 @@ include '../config/listTags.php';
           <p><?php echo $post['content'] ?></p>
         </div>
         <footer>
-          <small>♥<?php echo $post['like_number'];
-                  var_dump($_SESSION['connected_id']) ?></small>
+          <small>♥<?php echo $post['like_number']; ?></small>
           <?php include '../config/displayTags.php' ?>
 
         </footer>
       </article>
     <?php } ?>
 
-
+      <?php 
+       //je récupère un tableau avec tout le contenu et infos sur le post 
+  //$post = $lesInformations->fetch_assoc();
+      ?>
   </main>
 </div>
 </body>
