@@ -1,5 +1,5 @@
 <?php
-          //session_start();
+          
           include '../config/bdd.php';
           include '../config/recog_session.php';
           include '../config/chooseHeader.php';
@@ -13,7 +13,7 @@
                 <section>
                     <h3>Présentation</h3>
                     <p>Sur cette page vous trouverez les informations de l'utilisatrice
-                        n° <?php echo intval($_GET['user_id']) ?></p>
+                        <?php echo " ". $USER['alias'] ?></p>
 
                 </section>
             </aside>
@@ -26,7 +26,6 @@
                  * Documentation : https://www.php.net/manual/fr/reserved.variables.get.php
                  * ... mais en résumé c'est une manière de passer des informations à la page en ajoutant des choses dans l'url
                  */
-                $userId = intval($_GET['user_id']);
 
               
                 /**
