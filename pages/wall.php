@@ -2,6 +2,7 @@
 include '../config/bdd.php';
 include '../config/recog_session.php';
 include '../config/chooseHeader.php';
+include '/Applications/MAMP/htdocs/socialNetworkPHP/config/listAuthors.php';
 include '../config/listTags.php';
 ?>
 <div id="wrapper">
@@ -48,10 +49,8 @@ include '../config/listTags.php';
         <h3>
           <time><?php echo $post['created'] ?></time>
         </h3>
-        <address>
-          <?php echo "par <a href='" . $listAuteurs[$post['author_name']]['url'] . "'>" . htmlspecialchars($post['author_name']) . "</a>"; ?>
-        </address>
-
+        
+        <?php include '/Applications/MAMP/htdocs/socialNetworkPHP/config/displayAuthor.php' ?>
 
         <div>
           <p><?php echo $post['content'] ?></p>
