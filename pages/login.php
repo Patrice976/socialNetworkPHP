@@ -65,11 +65,12 @@ include '../config/chooseHeader.php';
           <dt><label for='motpasse'>Mot de passe</label></dt>
           <dd><input type='password' name='motpasse'></dd>
         </dl>
-        <input type='submit'>
+        <input class="button" type='submit'>
       </form>
       <p>
         Pas de compte?
-        <a href='registration.php'>Inscrivez-vous.</a>
+        <a role="button" class="button" href='registration.php'>Inscrivez-vous.</a>
+       
       </p>
 
     </article>
