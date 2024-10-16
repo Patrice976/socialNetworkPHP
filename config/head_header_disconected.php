@@ -5,6 +5,11 @@
         <title>ReSoC - Administration</title> 
         <meta name="author" content="Julien Falconnet">
         <link rel="stylesheet" href="../style/stylepatou.css"/>
+        <style>
+          body {
+            background-color: red;
+          }
+        </style>
     </head>
     <body>
         <header>
