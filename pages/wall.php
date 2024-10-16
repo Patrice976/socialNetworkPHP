@@ -12,7 +12,7 @@ include '../config/listTags.php';
     <img src="../img/user.jpg" alt="Portrait de l'utilisatrice" />
     <section>
       <h3>Bonjour  <?php echo " " . $USER['alias'] ?> </h3>
-      <p>Bienvenu sur ta pages numéro <?php echo $userId ?> , tu y retrouveras tout tes postes </p>
+      <p>Bienvenu sur ta pages, tu y retrouveras tout tes postes </p>
     </section>
   </aside>
   <main>

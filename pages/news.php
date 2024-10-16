@@ -9,9 +9,14 @@ include '../config/listTags.php';
   <aside>
     <img src="../img/user.jpg" alt="Portrait de l'utilisatrice" />
     <section>
-      <h3>Salut <?php echo " " . $USER['alias'] ?></h3>
-      <p>Reste au courant de tout ce qu'il se passe de le monde. En gardant un oeuil sur tout les utilisateurs
-       </p>
+      <?php if(isset($_SESSION['connected_id'])) {
+      ?>      <h3>Salut <?php echo " " . $USER['alias'] ?></h3>
+      <p>Reste au courant de tout ce qu'il se passe de le monde. En gardant un oeuil sur tout les utilisateurs </p>
+    <?php }else {?> <p> connecte toi pour en savoir plus </p> <?php } ?>
+
+
+    
+       
     </section>
   </aside>
   <main>
