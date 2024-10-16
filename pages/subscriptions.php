@@ -40,7 +40,7 @@
         <article>
           <img src="../img/user.jpg" alt="blason" />
           <h3>
-          <?php echo "par <a href='" . 'wall.php?user_id=' . $subscriptions['id'] . "'>" . htmlspecialchars($subscriptions['alias']) . "</a>"; ?>
+          <?php echo "par <a href='" . 'wallAuthor.php?user_id=' . $subscriptions['id'] . "'>" . htmlspecialchars($subscriptions['alias']) . "</a>"; ?>
           </h3>
           <p><?php echo $subscriptions['id'] ?></p>
         </article>
