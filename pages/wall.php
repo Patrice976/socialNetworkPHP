@@ -50,7 +50,7 @@ include '../config/listTags.php';
           <time><?php echo $post['created'] ?></time>
         </h3>
         
-        <?php include '/Applications/MAMP/htdocs/socialNetworkPHP/config/displayAuthor.php' ?>
+        <?php include '../config/displayAuthor.php' ?>
 
         <div>
           <p><?php echo $post['content'] ?></p>
