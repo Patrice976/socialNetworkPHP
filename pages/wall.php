@@ -2,7 +2,7 @@
 include '../config/bdd.php';
 include '../config/recog_session.php';
 include '../config/chooseHeader.php';
-include '/Applications/MAMP/htdocs/socialNetworkPHP/config/listAuthors.php';
+include '../config/listAuthors.php';
 include '../config/listTags.php';
 ?>
 <div id="wrapper">
