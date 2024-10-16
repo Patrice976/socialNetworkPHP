@@ -1,5 +1,5 @@
 <?php 
-if ($_SESSION['connected_id'] != null){
+if (isset($_SESSION['connected_id'])){
     include 'head_header.php';
 }
 else {
