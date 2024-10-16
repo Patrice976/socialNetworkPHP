@@ -43,9 +43,7 @@ include '../config/listTags.php';
     <section>
 
       <p>Bienvenue sur le mur de <?php echo $author['alias']; ?> </p>
-      <form action="subscribeSystem.php" method="post">
-        <button type ="submit">S'abonner</button>
-      </form></p>
+    <?php include '../config/subButton.php' ?>
     </section>
   </aside>
   <main>
