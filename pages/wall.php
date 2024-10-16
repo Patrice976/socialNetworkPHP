@@ -58,12 +58,22 @@ include '../config/listTags.php';
         </div>
         <footer>
           <small>♥<?php echo $post['like_number'];
-          var_dump($_SESSION['connected_id']) ?></small>
+           ?></small>
           <?php include '../config/displayTags.php' ?>
 
         </footer>
       </article>
     <?php } ?>
+    
+    <form action="wall.php" method="post">  
+    <dl>
+        <dt><label for='message'>Message</label></dt>
+        <dd>
+            <textarea name='posts' required></textarea> <!-- Change 'message' en 'posts' -->
+        </dd> 
+    </dl>
+    <input type='submit' value='Envoyer'>  <!-- Bouton pour soumettre le formulaire -->
+    </form>
 
 
   </main>
