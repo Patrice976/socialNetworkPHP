@@ -42,9 +42,10 @@ include '../config/listTags.php';
     <img src="../img/user.jpg" alt="Portrait de l'utilisatrice" />
     <section>
 
-      <p><!-- Bienvenue sur le mur de --> <?php 
-      
-      echo $author['alias']; ?></p>
+      <p>Bienvenue sur le mur de <?php echo $author['alias']; ?> </p>
+      <form action="subscribeSystem.php" method="post">
+        <button type ="submit">S'abonner</button>
+      </form></p>
     </section>
   </aside>
   <main>
