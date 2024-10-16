@@ -38,7 +38,18 @@ include '../config/poste_page.php';
     if (! $lesInformations) {
       echo ("Échec de la requete : " . $mysqli->error);
     }
+ ?>
+    <form action="wall.php" method="post">  
+    <dl>
+        <dt><label for='message'>Message</label></dt>
+        <dd>
+            <textarea name='posts' required></textarea> <!-- Change 'message' en 'posts' -->
+        </dd> 
+    </dl>
+    <input type='submit' value='Envoyer'>  <!-- Bouton pour soumettre le formulaire -->
+</form>
 
+<?php 
     /**
      * Etape 4: @todo Parcourir les messsages et remplir correctement le HTML avec les bonnes valeurs php
      */
@@ -66,15 +77,7 @@ include '../config/poste_page.php';
       </article>
     <?php } ?>
     
-    <form action="wall.php" method="post">  
-    <dl>
-        <dt><label for='message'>Message</label></dt>
-        <dd>
-            <textarea name='posts' required></textarea> <!-- Change 'message' en 'posts' -->
-        </dd> 
-    </dl>
-    <input type='submit' value='Envoyer'>  <!-- Bouton pour soumettre le formulaire -->
-</form>
+    
 
 
   </main>
