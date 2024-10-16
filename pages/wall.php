@@ -4,6 +4,7 @@ include '../config/recog_session.php';
 include '../config/chooseHeader.php';
 include '../config/listAuthors.php';
 include '../config/listTags.php';
+include '../config/poste_page.php';
 ?>
 <div id="wrapper">
 
@@ -73,7 +74,7 @@ include '../config/listTags.php';
         </dd> 
     </dl>
     <input type='submit' value='Envoyer'>  <!-- Bouton pour soumettre le formulaire -->
-    </form>
+</form>
 
 
   </main>
