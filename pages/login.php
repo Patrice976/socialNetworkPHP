@@ -57,7 +57,7 @@ include '../config/chooseHeader.php';
         }
       }
       ?>
-      <form action="login.php" method="post">
+      <form action="login.php" method="post" class="formLoginRegist">
         <input type='hidden' name='???' value='achanger'>
         <dl>
           <dt><label for='email'>E-Mail</label></dt>
@@ -65,13 +65,17 @@ include '../config/chooseHeader.php';
           <dt><label for='motpasse'>Mot de passe</label></dt>
           <dd><input type='password' name='motpasse'></dd>
         </dl>
-        <input class="button" type='submit'>
+        <button type='submit' class="button button_top" >Connexion</button>
       </form>
+      <div class="inscription">
       <p>
         Pas de compte?
-        <a role="button" class="button" href='registration.php'>Inscrivez-vous.</a>
-       
       </p>
+      <button class="button button_top"><a href='registration.php'>Inscription</a></button>
+      <!-- <a role="button"  href='registration.php' class="button button_top">Inscription</a> -->
+      
+      </div>
+      
 
     </article>
   </main>

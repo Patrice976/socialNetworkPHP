@@ -39,14 +39,15 @@ include '../config/poste_page.php';
       echo ("Échec de la requete : " . $mysqli->error);
     }
  ?>
-    <form action="wall.php" method="post">  
+    <form action="wall.php" method="post" class="postsForm">  
     <dl>
         <dt><label for='message'>Message</label></dt>
         <dd>
-            <textarea name='posts' required></textarea> <!-- Change 'message' en 'posts' -->
+            <textarea name='posts' required ></textarea> <!-- Change 'message' en 'posts' -->
         </dd> 
     </dl>
-    <input type='submit' value='Envoyer'>  <!-- Bouton pour soumettre le formulaire -->
+    <button type="submit" value='Envoyer' class="button button_top wallButton">Envoyer</button>
+    <!-- <input type='submit' value='Envoyer' class="button button_top wallButton">  --> <!-- Bouton pour soumettre le formulaire -->
 </form>
 
 <?php 
