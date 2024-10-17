@@ -27,7 +27,3 @@ if (isset($_SESSION['connected_id'])) {
 } else {
     echo "Utilisateur non connecté.";
 }
-?>
-
-
-              
