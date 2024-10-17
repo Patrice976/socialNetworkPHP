@@ -2,8 +2,9 @@
 include '../config/bdd.php';
 include '../config/recog_session.php';
 include '../config/chooseHeader.php';
-include '/Applications/MAMP/htdocs/socialNetworkPHP/config/listAuthors.php';
+include '../config/listAuthors.php';
 include '../config/listTags.php';
+include '../config/poste_page.php';
 ?>
 <div id="wrapper">
 
@@ -13,7 +14,7 @@ include '../config/listTags.php';
     <img src="../img/user.jpg" alt="Portrait de l'utilisatrice" />
     <section>
       <h3>Bonjour  <?php echo " " . $USER['alias'] ?> </h3>
-      <p>Bienvenu sur ta pages numéro <?php echo $userId ?> , tu y retrouveras tout tes postes </p>
+      <p>Bienvenu sur ta pages, tu y retrouveras tous tes postes </p>
     </section>
   </aside>
   <main>
@@ -37,7 +38,19 @@ include '../config/listTags.php';
     if (! $lesInformations) {
       echo ("Échec de la requete : " . $mysqli->error);
     }
+ ?>
+    <form action="wall.php" method="post" class="postsForm">  
+    <dl>
+        <dt><label for='message'>Message</label></dt>
+        <dd>
+            <textarea name='posts' required ></textarea> <!-- Change 'message' en 'posts' -->
+        </dd> 
+    </dl>
+    <button type="submit" value='Envoyer' class="button button_top wallButton">Envoyer</button>
+    <!-- <input type='submit' value='Envoyer' class="button button_top wallButton">  --> <!-- Bouton pour soumettre le formulaire -->
+</form>
 
+<?php 
     /**
      * Etape 4: @todo Parcourir les messsages et remplir correctement le HTML avec les bonnes valeurs php
      */
@@ -50,19 +63,22 @@ include '../config/listTags.php';
           <time><?php echo $post['created'] ?></time>
         </h3>
         
-        <?php include '/Applications/MAMP/htdocs/socialNetworkPHP/config/displayAuthor.php' ?>
+        <?php include '../config/displayAuthor.php' ?>
+
 
         <div>
           <p><?php echo $post['content'] ?></p>
         </div>
         <footer>
           <small>♥<?php echo $post['like_number'];
-          var_dump($_SESSION['connected_id']) ?></small>
+           ?></small>
           <?php include '../config/displayTags.php' ?>
 
         </footer>
       </article>
     <?php } ?>
+    
+    
 
 
   </main>

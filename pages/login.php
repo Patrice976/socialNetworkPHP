@@ -25,7 +25,7 @@ include '../config/chooseHeader.php';
         // on ne fait ce qui suit que si un formulaire a été soumis.
         // Etape 2: récupérer ce qu'il y a dans le formulaire @todo: c'est là que votre travaille se situe
         // observez le résultat de cette ligne de débug (vous l'effacerez ensuite)
-        echo "<pre>" . print_r($_POST, 1) . "</pre>";
+       
         // et complétez le code ci dessous en remplaçant les ???
         $emailAVerifier = $_POST['email'];
         $passwdAVerifier = $_POST['motpasse'];
@@ -53,10 +53,11 @@ include '../config/chooseHeader.php';
           echo "Votre connexion est un succès : " . $user['alias'] . ".";
           $_SESSION['connected_id'] = $user['id'];
           $userId = $_SESSION['connected_id'];
+          header ('location: wall.php' );
         }
       }
       ?>
-      <form action="login.php" method="post">
+      <form action="login.php" method="post" class="formLoginRegist">
         <input type='hidden' name='???' value='achanger'>
         <dl>
           <dt><label for='email'>E-Mail</label></dt>
@@ -64,12 +65,17 @@ include '../config/chooseHeader.php';
           <dt><label for='motpasse'>Mot de passe</label></dt>
           <dd><input type='password' name='motpasse'></dd>
         </dl>
-        <input type='submit'>
+        <button type='submit' class="button button_top" >Connexion</button>
       </form>
+      <div class="inscription">
       <p>
         Pas de compte?
-        <a href='registration.php'>Inscrivez-vous.</a>
       </p>
+      <button class="button button_top"><a href='registration.php'>Inscription</a></button>
+      <!-- <a role="button"  href='registration.php' class="button button_top">Inscription</a> -->
+      
+      </div>
+      
 
     </article>
   </main>

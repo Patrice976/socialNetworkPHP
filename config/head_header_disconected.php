@@ -5,10 +5,15 @@
         <title>ReSoC - Administration</title> 
         <meta name="author" content="Julien Falconnet">
         <link rel="stylesheet" href="../style/stylepatou.css"/>
+        <style>
+          body {
+            background-color: red;
+          }
+        </style>
     </head>
     <body>
         <header>
-            <img src="../img/resoc.jpg" alt="Logo de notre réseau social"/>
+            <img src="../img/logoHeader.png" alt="Logo de notre réseau social"/>
             <nav id="menu">
                 <a href="news.php">Actualités</a>
             </nav>

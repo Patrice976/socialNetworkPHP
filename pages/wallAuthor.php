@@ -15,7 +15,7 @@ include '../config/listTags.php';
   }
   $author= $datasAuthor->fetch_assoc();
   $laQuestionEnSql = "
-  SELECT posts.content, posts.created, users.alias as author_name, 
+  SELECT posts.content, posts.created,posts.id, users.alias as author_name, 
   COUNT(likes.id) as like_number, GROUP_CONCAT(DISTINCT tags.label) AS taglist 
   FROM posts
   JOIN users ON  users.id=posts.user_id
@@ -42,9 +42,8 @@ include '../config/listTags.php';
     <img src="../img/user.jpg" alt="Portrait de l'utilisatrice" />
     <section>
 
-      <p><!-- Bienvenue sur le mur de --> <?php 
-      
-      echo $author['alias']; ?></p>
+      <p>Bienvenue sur le mur de <?php echo $author['alias']; ?> </p>
+    <?php include '../config/subButton.php' ?>
     </section>
   </aside>
   <main>
@@ -65,7 +64,7 @@ include '../config/listTags.php';
           <p><?php echo $post['content'] ?></p>
         </div>
         <footer>
-          <small>♥<?php echo $post['like_number']; ?></small>
+        <small> <?php include '../config/like.php' ?></small>
           <?php include '../config/displayTags.php' ?>
 
         </footer>
