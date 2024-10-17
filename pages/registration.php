@@ -58,7 +58,7 @@ include '../config/chooseHeader.php';
         }
       }
       ?>
-      <form action="registration.php" method="post">
+      <form action="registration.php" method="post" class="formLoginRegist">
         <input type='hidden' name='???' value='achanger'>
         <dl>
           <dt><label for='pseudo'>Pseudo</label></dt>
@@ -68,7 +68,9 @@ include '../config/chooseHeader.php';
           <dt><label for='motpasse'>Mot de passe</label></dt>
           <dd><input type='password' name='motpasse' required></dd>
         </dl>
-        <input type='submit'>
+        <!-- <button class="button"><input type='submit' id="buttonRegis">Envoyer</button> -->
+        <button type="submit" id="buttonRegis">Envoyer</button>
+      
       </form>
     </article>
   </main>

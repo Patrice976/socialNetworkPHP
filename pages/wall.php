@@ -43,10 +43,19 @@ include '../config/suppr_post.php';
     if (! $lesInformations) {
       echo ("Échec de la requete : " . $mysqli->error);
     }
-
-    /**
-     * Etape 4: @todo Parcourir les messsages et remplir correctement le HTML avec les bonnes valeurs php
-     */
+ ?>
+ <!-- Formulaire pour publier un nouveau post -->
+ <form action="wall.php" method="post">
+      <dl>
+        <dt><label for='message'>Message</label></dt>
+        <dd>
+          <textarea name='posts' required></textarea>
+        </dd>
+      </dl>
+      <input type='submit' value='Envoyer'>
+    </form>
+    
+   <?php 
     while ($post = $lesInformations->fetch_assoc()) {
 
     ?>
@@ -78,19 +87,8 @@ include '../config/suppr_post.php';
 
 <!--Fin de la boucle pour les posts, après c'est le formulaire pour publier qui est mis à part sinon il y
 avant des conflits avec le delete_post_id-->
-
-    <!-- Formulaire pour publier un nouveau post -->
-    <form action="wall.php" method="post">
-      <dl>
-        <dt><label for='message'>Message</label></dt>
-        <dd>
-          <textarea name='posts' required></textarea>
-        </dd>
-      </dl>
-      <input type='submit' value='Envoyer'>
-    </form>
+  
   </main>
 </div>
 </body>
-
 </html>

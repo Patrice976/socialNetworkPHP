@@ -8,7 +8,7 @@
     </head>
     <body>
         <header>
-            <img src="../img/resoc.jpg" alt="Logo de notre réseau social"/>
+            <img src="../img/logoHeader.png" alt="Logo de notre réseau social"/>
             <nav id="menu">
                 <a href="news.php">Actualités</a>
                 <a href="wall.php">Mur</a>
