@@ -36,7 +36,7 @@
                   ?>
                     <article>
                       <img src="../img/user.jpg" alt="blason" />
-                      <h3>  <?php echo "par <a href='" . 'wallAuthor.php?user_id=' . $followers['id'] . "'>" . htmlspecialchars($followers['alias']) . "</a>"; ?></h3>
+                      <h3>  <?php echo "par <a href='" . 'wall.php?user_id=' . $followers['id'] . "'>" . htmlspecialchars($followers['alias']) . "</a>"; ?></h3>
                       <p><?php echo $followers['id'] ?></p>
                     </article>
                   <?php } ?>

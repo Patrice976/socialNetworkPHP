@@ -5,16 +5,15 @@ include '../config/chooseHeader.php';
 include '../config/listAuthors.php';
 include '../config/listTags.php';
 include '../config/poste_page.php';
-include '../config/suppr_post.php';
 ?>
 <div id="wrapper">
 
 
   <aside>
-
+    
     <img src="../img/user.jpg" alt="Portrait de l'utilisatrice" />
     <section>
-      <h3>Bonjour <?php echo " " . $USER['alias'] ?> </h3>
+      <h3>Bonjour  <?php echo " " . $USER['alias'] ?> </h3>
       <p>Bienvenu sur ta pages, tu y retrouveras tous tes postes </p>
     </section>
   </aside>
@@ -23,10 +22,8 @@ include '../config/suppr_post.php';
     /**
      * Etape 3: récupérer tous les messages de l'utilisatrice
      */
-
-     // Ajout de posts.id pour aller chercher l'id du post pour supprimer
     $laQuestionEnSql = "
-                    SELECT posts.id, posts.content, posts.created, users.alias as author_name, 
+                    SELECT posts.content, posts.created, users.alias as author_name, 
                     COUNT(likes.id) as like_number, GROUP_CONCAT(DISTINCT tags.label) AS taglist 
                     FROM posts
                     JOIN users ON  users.id=posts.user_id
@@ -37,58 +34,55 @@ include '../config/suppr_post.php';
                     GROUP BY posts.id
                     ORDER BY posts.created DESC  
                     ";
-
-
     $lesInformations = $mysqli->query($laQuestionEnSql);
     if (! $lesInformations) {
       echo ("Échec de la requete : " . $mysqli->error);
     }
  ?>
- <!-- Formulaire pour publier un nouveau post -->
- <form action="wall.php" method="post">
-      <dl>
+    <form action="wall.php" method="post" class="postsForm">  
+    <dl>
         <dt><label for='message'>Message</label></dt>
         <dd>
-          <textarea name='posts' required></textarea>
-        </dd>
-      </dl>
-      <input type='submit' value='Envoyer'>
-    </form>
-    
-   <?php 
+            <textarea name='posts' required ></textarea> <!-- Change 'message' en 'posts' -->
+        </dd> 
+    </dl>
+    <button type="submit" value='Envoyer' class="button button_top wallButton">Envoyer</button>
+    <!-- <input type='submit' value='Envoyer' class="button button_top wallButton">  --> <!-- Bouton pour soumettre le formulaire -->
+</form>
+
+<?php 
+    /**
+     * Etape 4: @todo Parcourir les messsages et remplir correctement le HTML avec les bonnes valeurs php
+     */
     while ($post = $lesInformations->fetch_assoc()) {
 
+      //echo "<pre>" . print_r($post, 1) . "</pre>";
     ?>
       <article>
         <h3>
-          <time><?php echo $post['created']; ?></time>
+          <time><?php echo $post['created'] ?></time>
         </h3>
-        <?php include '../config/displayAuthor.php'; ?>
+        
+        <?php include '../config/displayAuthor.php' ?>
+
+
         <div>
-          <p><?php echo $post['content']; ?></p>
+          <p><?php echo $post['content'] ?></p>
         </div>
         <footer>
-          <small>♥<?php echo $post['like_number']; ?></small>
+          <small>♥<?php echo $post['like_number'];
+           ?></small>
+          <?php include '../config/displayTags.php' ?>
 
-          <?php include '../config/displayTags.php'; ?>
-
-          <!-- Formulaire pour supprimer le post -->
-          <form action="wall.php" method="post" style="display:inline;">
-            <input type="hidden" name="delete_post_id" value="<?php echo $post['id']; ?>">
-            <button type="submit" style="background:none; border:none; color:purple; cursor:pointer;">
-              ✖
-            </button>
-          </form>
         </footer>
       </article>
-    <?php
-    } 
-    ?>
+    <?php } ?>
+    
+    
 
-<!--Fin de la boucle pour les posts, après c'est le formulaire pour publier qui est mis à part sinon il y
-avant des conflits avec le delete_post_id-->
-  
+
   </main>
 </div>
 </body>
+
 </html>
