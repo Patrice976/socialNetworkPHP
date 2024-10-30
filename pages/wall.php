@@ -6,7 +6,6 @@ include '../config/listAuthors.php';
 include '../config/listTags.php';
 include '../config/poste_page.php';
 include '../config/suppr_post.php';
-include '../config/suppr_post.php';
 ?>
 <div id="wrapper">
 
