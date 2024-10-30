@@ -6,6 +6,7 @@ include '../config/listAuthors.php';
 include '../config/listTags.php';
 include '../config/poste_page.php';
 include '../config/suppr_post.php';
+include '../config/suppr_post.php';
 ?>
 <div id="wrapper">
 
@@ -24,7 +25,7 @@ include '../config/suppr_post.php';
      * Etape 3: récupérer tous les messages de l'utilisatrice
      */
 
-     // Ajout de posts.id pour aller chercher l'id du post pour supprimer
+    // Ajout de posts.id pour aller chercher l'id du post pour supprimer
     $laQuestionEnSql = "
                     SELECT posts.id, posts.content, posts.created, users.alias as author_name, 
                     COUNT(likes.id) as like_number, GROUP_CONCAT(DISTINCT tags.label) AS taglist 
@@ -43,21 +44,21 @@ include '../config/suppr_post.php';
     if (! $lesInformations) {
       echo ("Échec de la requete : " . $mysqli->error);
     }
- ?>
- <!-- Formulaire pour publier un nouveau post -->
- <form action="wall.php" method="post">
+    ?>
+    <!-- Formulaire pour publier un nouveau post -->
+    <form action="wall.php" method="post">
       <dl>
         <dt><label for='message'>Message</label></dt>
         <dd>
           <textarea name='posts' required></textarea>
         </dd>
       </dl>
-      <button  type="submit" class="buttonRegis">Envoyer</button>
+      <button type="submit" class="buttonRegis">Envoyer</button>
       <!-- <input type='submit' value='Envoyer'> -->
-     
+
     </form>
-    
-   <?php 
+
+    <?php
     while ($post = $lesInformations->fetch_assoc()) {
 
     ?>
@@ -84,13 +85,14 @@ include '../config/suppr_post.php';
         </footer>
       </article>
     <?php
-    } 
+    }
     ?>
 
-<!--Fin de la boucle pour les posts, après c'est le formulaire pour publier qui est mis à part sinon il y
+    <!--Fin de la boucle pour les posts, après c'est le formulaire pour publier qui est mis à part sinon il y
 avant des conflits avec le delete_post_id-->
-  
+
   </main>
 </div>
 </body>
+
 </html>
