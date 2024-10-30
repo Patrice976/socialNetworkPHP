@@ -294,7 +294,7 @@ pre{
   color: #fff;
  }
 
- /* .wallButton::before{
+  .wallButton::before{
   content: '';
   width: 0;
   height: 3em;
@@ -314,7 +314,7 @@ pre{
 
  .wallButton:hover{
   color: #fff;
- } */
+ } 
 
 
 /****** Style des formulaires *******/
@@ -336,9 +336,10 @@ input{
   margin-bottom: 2em;
 }
 
-#buttonRegis{
+.buttonRegis{
   width: 9em;
   height: 3em;
+  margin-bottom: 3em;
   border-radius: 30em;
   font-size: 1em;
   font-family: "Poppins", sans-serif;
@@ -353,7 +354,7 @@ input{
 }
 
 
-#buttonRegis::before {
+.buttonRegis::before {
   content: '';
   width: 0;
   height: 3em;
@@ -367,11 +368,11 @@ input{
   z-index: -1;
 }
 
-#buttonRegis:hover::before {
+.buttonRegis:hover::before {
   width: 9em;
  }
 
- #buttonRegis:hover{
+ .buttonRegis:hover{
   color: #fff;
  }
 

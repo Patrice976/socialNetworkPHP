@@ -69,7 +69,7 @@ include '../config/chooseHeader.php';
           <dd><input type='password' name='motpasse'></dd>
         </dl>
         <!-- <button class="button"><input type='submit' id="buttonRegis">Envoyer</button> -->
-        <button type="submit" id="buttonRegis">Envoyer</button>
+        <button type="submit" class="buttonRegis">Envoyer</button>
       
       </form>
     </article>

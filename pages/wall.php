@@ -52,7 +52,9 @@ include '../config/suppr_post.php';
           <textarea name='posts' required></textarea>
         </dd>
       </dl>
-      <input type='submit' value='Envoyer'>
+      <button  type="submit" class="buttonRegis">Envoyer</button>
+      <!-- <input type='submit' value='Envoyer'> -->
+     
     </form>
     
    <?php 
